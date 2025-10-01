@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <meta name="description" content="Struktur Situs Resmi Ikatan Keluarga Alumni SDI - update data alumni, kegiatan, dan informasi lainnya." />
+  <meta name="keywords" content="alumni, IKA, SDI, komunitas" />
+  <meta name="author" content="Ikatan keluarga Alumni" />
+  <title>Struktur IKA SDI SILUNGKANG — Bersatu, Berbagi, Berkontribusi</title>
+
+  <link rel="icon" href="asset/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    .navbar { padding:1rem 2rem; }
+    .navbar-brand { font-weight:bold; color:#00416a !important; }
+    .navbar-nav .nav-link { color:#555 !important; margin-right:1rem; }
+    .navbar-nav .nav-item.active .nav-link { color:#00416a !important; font-weight:bold; }
+    .alumni-section { padding:60px 20px; display:flex; justify-content:center; background:linear-gradient(135deg,#00416a,#00b4db) }
+    .alumni-card { background:#fff; max-width:700px; width:100%; border-radius:20px; padding:40px 30px; box-shadow:0 10px 30px rgba(0,0,0,.15); text-align:center }
+    .quote { font-size:1.3rem; font-style:italic; color:#333; margin-bottom:35px; line-height:1.6; }
+    .profile { display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; }
+    .profile-img { width:120px; height:120px; object-fit:cover; border-radius:50%; border:4px solid #00b4db; box-shadow:0 5px 15px rgba(0,0,0,.2) }
+    .profile-info h4 { margin:0; font-size:1.2rem; font-weight:700; color:#222; }
+    .profile-info p { margin:5px 0 0; font-size:.95rem; color:#555; line-height:1.4 }
+    .alumni-stats { display:flex; justify-content:center; align-items:center; padding:40px 20px; background:linear-gradient(135deg,#00416a,#00b4db) }
+    .stats-card { background:#fff; border-radius:20px; padding:40px 30px; max-width:600px; width:100%; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.15) }
+    .stats-number { font-size:3rem; font-weight:800; color:#2a5298; margin-bottom:15px; }
+    .stats-title { font-size:1.4rem; font-weight:600; color:#333; margin-bottom:10px; }
+    .stats-desc { font-size:1rem; color:#555; margin:0 }
+    footer { background:#1C2A48; color:#fff; padding:50px 20px; }
+    footer h5 { font-weight:bold; margin-bottom:15px; }
+    footer p, footer a { color:#ccc; text-decoration:none; }
+    .map-container { overflow:hidden; padding-bottom:56.25%; position:relative; height:0; }
+    .map-container iframe { position:absolute; left:0; top:0; width:100%; height:100%; }
+  </style>
+  <style>
+.struktur {
+  background: #f9fbfd;
+  padding: 85px 20px;
+}
+.struktur h2 {
+  font-weight: 700;
+  color: #00264d;
+  text-transform: uppercase;
+}
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+.org-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+.org-box {
+  background: #fff;
+  border: 2px solid #00416a;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+  max-width: 240px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  position: relative;
+}
+.org-box:hover {
+  transform: translateY(-5px);
+}
+.org-box h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00416a;
+}
+.org-box p {
+  margin: 0;
+  line-height: 1.4;
+}
+.ketua {
+  background: #00416a;
+  color: #fff;
+}
+.ketua h4 {
+    background: #6a202d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.penasehat {
+  background: #eaf3fc;
+  border: 2px dashed #00416a;
+}
+
+/* Garis penghubung */
+.line.vertical {
+  width: 2px;
+  height: 30px;
+  background: #00416a;
+}
+
+/* Garis horizontal antar kotak */
+.org-row::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #00416a;
+  margin: auto;
+  width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .org-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .org-row::before {
+    display: none; /* garis horizontal hilang di mobile */
+  }
+  .org-box {
+    width: 90%;
+    max-width: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="asset/logo-ika.png" alt="Logo IKA SDI" class="me-2" style="height:40px;">
+      <span>IKA SDI</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/sambutan.html">Sambutan</a></li>
+        <li class="nav-item"><a class="nav-link" href="/struktur.html">Struktur</a></li>
+        <li class="nav-item"><a class="nav-link" href="/bidang.html">Bidang</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Struktur Organisasi -->
+<section class="struktur">
+  <div class="container">
+    <h2 class="text-center mb-5">Struktur Organisasi</h2>
+
+    <div class="org-chart">
+      <!-- Ketua Umum -->
+      <div class="org-box ketua">
+        <h4>Ketua Umum</h4>
+        <p>Ir. Mahir Syarifudin<br>(A76)</p>
+      </div>
+
+      <!-- Garis -->
+      <div class="line vertical"></div>
+
+      <!-- Wakil Ketua -->
+      <div class="org-row">
+        <div class="org-box">
+          <h4>Wakil Ketua 1</h4>
+          <p>Asral<br>(A80)</p>
+        </div>
+        <div class="org-box">
+          <h4>Wakil Ketua 2</h4>
+          <p>Irwan Daniel<br>(A79)</p>
+        </div>
+      </div>
+
+      <div class="line vertical"></div>
+
+      <!-- Sekretaris & Bendahara -->
+      <div class="org-row">
+        <div class="org-box">
+          <h4>Sekretaris Umum</h4>
+          <p>Jhoni Ref<br>(A87)</p>
+        </div>
+        <div class="org-box">
+          <h4>Bendahara Umum</h4>
+          <p>Lifromi<br>(A85)</p>
+        </div>
+      </div>
+
+      <div class="line vertical"></div>
+
+      <!-- Bidang -->
+      <div class="org-row bidang">
+        <div class="org-box">
+          <h4>Bidang Ekonomi & Kewirausahaan</h4>
+          <p>Herwin (A80)<br>Zahrul (A82)</p>
+        </div>
+        <div class="org-box">
+          <h4>Bidang Pendidikan & Kerjasama</h4>
+          <p>Tasman (A80)<br>Febri (A09)</p>
+        </div>
+        <div class="org-box">
+          <h4>Bidang Organisasi & Kaderisasi</h4>
+          <p>Andre O (A11)<br>Yuliza (A86)</p>
+        </div>
+        <div class="org-box">
+          <h4>Bidang Informasi / Humas</h4>
+          <p>Edrawati (A85)<br>Ande Nung (A81)<br>Mitra Taher (A82)<br>Afrilta (A85)</p>
+        </div>
+        <div class="org-box">
+          <h4>Bidang Sosial, Seni & Budaya</h4>
+          <p>Defrita (A86)<br>Poopy (A94)<br>Lusi (A94)<br>Andreas (A97)<br>Kurnia (A03)</p>
+        </div>
+      </div>
+
+      <div class="line vertical"></div>
+
+      <!-- Penasehat -->
+      <div class="org-box penasehat mt-4">
+        <h4>Penasehat</h4>
+        <p>
+          1. Hendrik (A72)<br>
+          2. Yerry (A72)<br>
+          3. Ziska (A73)<br>
+          4. Oscar (A73)<br>
+          5. Alfen (A74)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Tentang IKA SDI</h5>
+          <p>Organisasi alumni dengan 5 bidang kegiatan: Bidang Ekonomi & Kewirausahaan, Bidang Pendidikan & Kerjasama, Bidang Organisasi & Kaderisasi, Bidang Informasi / Humas, Bidang Sosial, Seni & Budaya.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Hubungi Kami</h5>
+          <p><i class="fas fa-home"></i> Jalan Gotong Royong Kav 13, Kota/Kabupaten Tangerang, Kecamatan Larangan, Kelurahan Larangan Indah, RT/RW 04/01, Kode Pos 15154</p>
+          <p><i class="fas fa-envelope"></i> ika.sdi.silungkang@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +62 851 7680 9339</p>
+          <p><i class="fab fa-whatsapp"></i> +62 851 7680 9339</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Peta Lokasi</h5>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d602101.3796113144!2d107.312013!3d-6.323794!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699b059bb8deb9%3A0x86980df629d49c93!2sSTTI%20Sony%20Sugema!5e1!3m2!1sen!2sus!4v1758259910582!5m2!1sen!2sus" style="border:0;" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3">
+      © 2025 IKA SDI.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

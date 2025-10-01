@@ -71,102 +71,10 @@
     .map-container { overflow:hidden; padding-bottom:56.25%; position:relative; height:0; }
     .map-container iframe { position:absolute; left:0; top:0; width:100%; height:100%; }
   </style>
-<style>
-/* Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(rgba(0,40,80,0.7), rgba(0,40,80,0.7)), #00264d;
-  color: #fff;
-  transition: background-image 0.6s ease-in-out;
-  overflow: hidden;
-}
-
-.hero-content {
-  max-width: 800px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: .5s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  line-height: 1.3;
-  animation: fadeUp 1s ease forwards;
-}
-
-.hero h2 span { color: #ffcc00; }
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: .8s;
-}
-
-.hero em { font-style: italic; opacity: 0.9; }
-
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #ffcc00;
-  color: #00264d;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeUp 1s ease forwards, pulse 2s infinite 2s;
-  animation-delay: 1.2s;
-}
-
-.btn:hover {
-  background: #e6b800;
-  transform: translateY(-3px) scale(1.03);
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,204,0,0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(255,204,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,204,0,0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero { min-height: 60vh; padding: 30px 15px; }
-  .hero h2 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-  .btn { padding: 10px 22px; font-size: 0.95rem; }
-}
-@media (max-width: 480px) {
-  .hero h2 { font-size: 1.5rem; }
-  .hero p { font-size: 0.95rem; }
-}
+<style>.hero{display:flex;align-items:center;justify-content:center;min-height:80vh;text-align:center;padding:40px 20px;background:linear-gradient(rgb(0 40 80 / .7),rgb(0 40 80 / .7)),#00264d;color:#fff;overflow:hidden;position:relative}.hero::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transform:scale(1.1);transition:opacity 1.2s ease,transform 6s ease;z-index:0}.hero.loaded::before{opacity:1;transform:scale(1)}.hero-content{max-width:800px;position:relative;z-index:1;animation:fadeUp 1.2s ease}@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.hero h2{font-size:2.2rem;margin-bottom:15px;font-weight:700;line-height:1.3}.hero h2 span{color:#fc0}.hero p{font-size:1.1rem;margin-bottom:25px;line-height:1.6}.hero em{font-style:italic;opacity:.9}.btn{display:inline-block;padding:12px 28px;background:#fc0;color:#00264d;font-weight:600;border-radius:30px;text-decoration:none;transition:0.3s ease}.btn:hover{background:#e6b800;transform:translateY(-3px)}@media (max-width:768px){.hero{min-height:60vh;padding:30px 15px}.hero h2{font-size:1.8rem}.hero p{font-size:1rem}.btn{padding:10px 22px;font-size:.95rem}}@media (max-width:480px){.hero h2{font-size:1.5rem}.hero p{font-size:.95rem}}
 </style>
-
 </head>
-
 <body>
-
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
   <div class="container">
@@ -198,6 +106,7 @@
     <a href="/register" class="btn">Perbarui Data Anda</a>
   </div>
 </section>
+
   <!-- Section Alumni -->
   <section class="alumni-section pt-5">
     <div class="alumni-card">
@@ -249,19 +158,16 @@
     </div>
   </footer>
 <script>
-  // Lazy load background
-  document.addEventListener("DOMContentLoaded", function () {
-    const hero = document.querySelector(".hero");
-    const bg = hero.getAttribute("data-bg");
-    if (bg) {
-      const img = new Image();
-      img.src = bg;
-      img.onload = () => {
-        hero.style.backgroundImage = 
-          `linear-gradient(rgba(0,40,80,0.7), rgba(0,40,80,0.7)), url('${bg}')`;
-      };
-    }
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero");
+  const bg = hero.getAttribute("data-bg");
+  if (bg) {
+    hero.querySelector("::before");
+    hero.style.setProperty("--hero-bg", `url('${bg}')`);
+    hero.classList.add("loaded");
+    document.querySelector(".hero::before")?.style.setProperty("background-image", `url('${bg}')`);
+  }
+});
 </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
